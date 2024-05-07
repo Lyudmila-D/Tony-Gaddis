@@ -1,0 +1,40 @@
+ROWS = 3
+COLS = 3
+
+
+def main():
+
+    list_num = [[0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]]
+
+    for num_r in range(ROWS):
+        for num_c in range(COLS):
+            list_num[num_r][num_c] = int(input('Введите число от 1 до 9: '))
+    print(list_num)
+
+    is_magic_square(list_num)
+
+def is_magic_square(list_num):
+    row_1 = list_num[0][0] + list_num[0][1] + list_num[0][2]
+    row_2 = list_num[1][0] + list_num[1][1] + list_num[1][2]
+    row_3 = list_num[2][0] + list_num[2][1] + list_num[2][2]
+    column_1 = list_num[0][0] + list_num[1][0] + list_num[2][0]
+    column_2 = list_num[0][1] + list_num[1][1] + list_num[2][1]
+    column_3 = list_num[0][2] + list_num[1][2] + list_num[2][2]
+    diagonal_4 = list_num[0][0] + list_num[1][1] + list_num[2][2]
+    diagonal_5 = list_num[2][0] + list_num[1][1] + list_num[0][2]
+
+    if row_1 == row_2 == row_3 == column_1 == column_2 == column_3 == diagonal_4 == diagonal_5:
+        print(f'Является магическим квадратом, так как сумма каждой строки, '
+              f'каждого столбца и каждой диагонали в итоге состаляет одно и тоже число: {diagonal_5}')
+    else:
+        print('Магическим квадратом не является, потому что:')
+        print('Строка 1 =', row_1, 'Строка 2 =', row_2, 'Строка 3 =', row_3)
+        print('Колонка 1 =', column_1, 'Колонка 1 =', column_2, 'Колонка 1 =', column_3)
+        print('Диагональ 1 =', diagonal_4, 'Диагональ 2 =', diagonal_5)
+        return True
+
+
+if __name__ == '__main__':
+    main()
