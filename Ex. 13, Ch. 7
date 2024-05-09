@@ -1,0 +1,20 @@
+import random
+
+def main():
+
+    input_file = open('8_ball_responses_ru.txt', 'r')
+    answers = input_file.readlines()
+
+    again = 'д'
+    while again == 'д' or again == 'Д':
+        input('Задайте ваш вопрос, требующий ответа "да" или "нет": ')
+        magic_answer = random.choice(answers).rstrip('\n')
+        print(magic_answer)
+
+        again = input('Задать ещё вопрос? (д = да): ')
+
+    input_file.close()
+
+
+if __name__ == '__main__':
+    main()
