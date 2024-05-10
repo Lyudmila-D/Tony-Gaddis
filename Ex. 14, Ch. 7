@@ -1,0 +1,46 @@
+import matplotlib.pyplot as plt
+
+
+def main():
+    expenses_contents = read_monthly_expenses()
+
+    # Создать список меток долей.
+    slice_expenses = ['Квартплата', 'Бензин', 'Продукты', 'Одежда', 'Машина', 'Другое']
+
+    # Создать из этих значений круговую диаграмму.
+    plt.pie(expenses_contents, labels=slice_expenses)
+
+    # Добавить заголовок.
+    plt.title('Траты за месяц')
+
+    # Показать круговую диаграмму.
+    plt.show()
+
+def  read_monthly_expenses():
+    # Открыть файл с именем monthly_expenses.txt.
+    expenses_infile = open('monthly_expenses.txt', 'r')
+    # Прочитать содержимое файла.
+    expenses_contents = expenses_infile.readlines()
+
+    # Конвертировать каждый элемент в тип int.
+    index = 0
+    while index < len(expenses_contents):
+        expenses_contents[index] = int(expenses_contents[index])
+        index += 1
+    # Закрыть файл.
+    expenses_infile.close()
+    return expenses_contents
+
+def monthly_expenses():
+    monthly_expenses = [250, 100, 200, 100, 300, 50]
+    expenses = open('monthly_expenses.txt', 'w')
+
+    # Записать список в файл.
+    for item in monthly_expenses:
+        expenses.write(str(item) + '\n')
+    # Закрыть файл
+    expenses.close()
+    return monthly_expenses
+
+if __name__ == '__main__':
+    main()
