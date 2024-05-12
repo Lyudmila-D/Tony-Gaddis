@@ -1,0 +1,44 @@
+# Эта программа выводит простой линейный график.
+
+import matplotlib.pyplot as plt
+
+def main():
+    # Создать списки для координат X и Y каждой точки данных.
+    x_coords = list(range(1, 53))
+    y_coords = read_gas_averages()
+
+    # Построить линейный график.
+    plt.plot(x_coords, y_coords)
+
+    # Добавить заголовок.
+    plt.title('Средняя цена бензина в течении каждой недели 1994 года')
+
+    # Добавить на оси описательные метки.
+    plt.xlabel('Неделя')
+    plt.ylabel('Средняя цена бензина')
+
+    # Добавить сетку.
+    plt.grid(True)
+
+    # Показать линейный график.
+    plt.show()
+
+
+def  read_gas_averages():
+    # Открыть файл с именем 1994_Weekly_Gas_Averages.txt.
+    gas_averages_infile = open('1994_Weekly_Gas_Averages.txt', 'r')
+    # Прочитать содержимое файла.
+    gas_averages = gas_averages_infile.readlines()
+    gas_averages_infile.close()
+
+    # Отсечь символ новой строки из каждого элемента.
+    for i in range(len(gas_averages)):
+        gas_averages[i] = gas_averages[i].rstrip('\n')
+
+    # Закрыть файл.
+    gas_averages_infile.close()
+    return gas_averages
+
+
+if __name__ == '__main__':
+    main()
