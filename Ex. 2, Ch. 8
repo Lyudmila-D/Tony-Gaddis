@@ -1,0 +1,8 @@
+def main():
+    full_name = input('Введите имя, фамилию, отчество: ')
+    word_full_name = full_name.split()
+    result = f'{word_full_name[0][0]}.{word_full_name[1][0]}.{word_full_name[2][0]}.'
+    print(result)
+
+if __name__ == '__main__':
+    main()
