@@ -1,0 +1,29 @@
+data_string = input('Напишите дату в формате дд/мм/гггг: ')
+data_list = data_string.split('/')
+
+if data_list[1] == '01':
+    data_list[1] = 'января'
+if data_list[1] == '02':
+    data_list[1] = 'февраля'
+if data_list[1] == '03':
+    data_list[1] = 'марта'
+if data_list[1] == '04':
+    data_list[1] = 'апреля'
+if data_list[1] == '05':
+    data_list[1] = 'мая'
+if data_list[1] == '06':
+    data_list[1] = 'июня'
+if data_list[1] == '07':
+    data_list[1] = 'июля'
+if data_list[1] == '08':
+    data_list[1] = 'августа'
+if data_list[1] == '09':
+    data_list[1] = 'сентября'
+if data_list[1] == '10':
+    data_list[1] = 'октября'
+if data_list[1] == '11':
+    data_list[1] = 'ноября'
+if data_list[1] == '12':
+    data_list[1] = 'декабря'
+
+print(f'{data_list[0]} {data_list[1]} {data_list[2]} г.')
