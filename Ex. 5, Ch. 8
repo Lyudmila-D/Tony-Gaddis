@@ -1,0 +1,27 @@
+phone_number = input('Введите 10-ти символьный номер телефона в формате ХХХ-ХХХ-ХХХХ: ')
+result = ''
+
+for i in phone_number:
+    if (i == '0' or i == '1' or i == '2' or i == '3' or i == '4'
+            or i == '5' or i == '6' or i == '7' or i == '8' or i == '9'):
+        result += i
+    if i == '-':
+        result += i
+    if i == 'A' or i == 'B' or i == 'C':
+        result += '2'
+    elif i == 'D' or i == 'E' or i == 'F':
+        result += '3'
+    elif i == 'G' or i == 'H' or i == 'I':
+        result += '4'
+    elif i == 'J' or i == 'K' or i == 'L':
+        result += '5'
+    elif i == 'M' or i == 'N' or i == 'O':
+        result += '6'
+    elif i == 'P' or i == 'Q' or i == 'R' or i == 'S':
+        result += '7'
+    elif i == 'T' or i == 'U' or i == 'V':
+        result += '8'
+    elif i == 'W' or i == 'X' or i == 'Y' or i == 'Z':
+        result += '9'
+
+print(f'Введенный номер телефона {phone_number} в числовом эквивалетнте: {result}')
