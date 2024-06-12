@@ -1,0 +1,22 @@
+def main():
+    count = 0
+    text_file = open('text.txt', 'r')
+    word_count = []
+
+    for line_text in text_file:
+        line_text = line_text.rstrip('\n')
+        count += 1
+        text_words = line_text.split()
+        total_words = len(text_words)
+        word_count.append(total_words)
+
+    total = sum(word_count)
+    average = sum(word_count) // count
+    result = f'В {count} предложениях всего {total} слов и среднее количество слов на предложение {average}'
+    print(result)
+
+    text_file.close()
+
+
+if __name__ == '__main__':
+    main()
