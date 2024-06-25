@@ -1,0 +1,22 @@
+def main():
+
+    string = "привет! меня зовут джо. а как твое имя?"
+
+    result = ''
+    to_upper = True
+
+    for symbol in string:
+        if to_upper and symbol.isalpha():
+            result += symbol.upper()
+            to_upper = False
+        else:
+            result += symbol
+
+        if symbol in ['.', '?', '!']:
+            to_upper = True
+
+    print(result)
+
+
+if __name__ == '__main__':
+    main()
